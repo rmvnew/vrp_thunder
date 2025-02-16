@@ -179,52 +179,10 @@ Citizen.CreateThread(function()
                     local coordsVehicle = GetOffsetFromEntityInWorldCoords(veh, 0.0, 0.0, 1.0)
                     local distanceVeh = #(pedCoords - coordsVehicle)
 
-                    -- if distanceVeh <= 2.0 then
-                    --     time = 5
-                    --     DrawText3Ds2(coordsVehicle.x, coordsVehicle.y, coordsVehicle.z, "Pressione [~b~E~w~] para desmanchar esse veiculo.")
-                    --     if IsControlJustReleased(1, 51) and segundos2 <= 0 and vTunnel.checkPermission(v.permission) then
-                    --         segundos2 = 0
-                    --         local mPlaca, mName, mNet, mPortaMalas, mPrice, mLock, mModel = vRP.ModelName(5)
-                    --         print("DEBUG: Placa ->", mPlaca, " | Nome ->", mName)
-                    --         desmancharVeiculo(veh, mPlaca, mName, mNet, mPortaMalas, mPrice, mLock, mModel)
-                    --         exports.thunder_garages:setInDesmanche(true)
-                    --     end
-                    -- end
-
                     if distanceVeh <= 2.0 then
                         time = 5
                         DrawText3Ds2(coordsVehicle.x, coordsVehicle.y, coordsVehicle.z, "Pressione [~b~E~w~] para desmanchar esse veiculo.")
                         
-                        -- if IsControlJustReleased(1, 51) and segundos2 <= 0 and vTunnel.checkPermission(v.permission) then
-                        --     segundos2 = 0
-                    
-                        --     -- Pegando o veículo mais próximo corretamente
-                        --     local mPlaca = GetVehicleNumberPlateText(veh) -- Captura a placa do veículo
-                        --     local mName = GetDisplayNameFromVehicleModel(GetEntityModel(veh)) -- Nome do modelo
-                        --     local mNet = VehToNet(veh) -- Obtém a Network ID do veículo
-                        --     local mPortaMalas = GetVehicleDoorLockStatus(veh) -- Status do porta-malas
-                            
-                        --     local vehicleHash = GetEntityModel(veh)
-                        --     local vehicleData = _G.garagesConfig and _G.garagesConfig.listCars[vehicleHash]
-                            
-                        --     local mPrice = vehicleData and vehicleData.price or _G.garagesConfig.main.defaultCarPrice
-                            
-
-
-
-                        --     local mLock = GetVehicleDoorsLockedForPlayer(veh, PlayerPedId()) -- Status de trava
-                        --     local mModel = GetEntityModel(veh) -- Modelo do veículo
-                    
-                        --     -- Normalizando a placa para evitar inconsistências no banco de dados
-                        --     mPlaca = string.upper(mPlaca)
-                    
-                        --     -- Debug para verificar se os dados foram capturados corretamente
-                        --     print("DEBUG: Placa ->", mPlaca, " | Nome ->", mName, " | Modelo ->", mModel, " | Net ID ->", mNet)
-                    
-                        --     -- Chamando a função de desmanche com os dados corrigidos
-                        --     desmancharVeiculo(veh, mPlaca, mName, mNet, mPortaMalas, mPrice, mLock, mModel)
-                        --     exports.thunder_garages:setInDesmanche(true)
-                        -- end
                         if IsControlJustReleased(1, 51) and segundos2 <= 0 and vTunnel.checkPermission(v.permission) then
                             segundos2 = 0
                         
@@ -253,7 +211,7 @@ Citizen.CreateThread(function()
                             mPlaca = string.gsub(string.upper(mPlaca), "%s+", "") -- Remove espaços extras
                         
                             -- Debug para verificar se os dados foram capturados corretamente
-                            print("DEBUG: Placa ->", mPlaca, " | Nome ->", mName, " | Modelo ->", mModel, " | Net ID ->", mNet, " | Preço ->", mPrice)
+                            -- print("DEBUG: Placa ->", mPlaca, " | Nome ->", mName, " | Modelo ->", mModel, " | Net ID ->", mNet, " | Preço ->", mPrice)
                         
                             -- Chamando a função de desmanche com os dados corrigidos
                             desmancharVeiculo(veh, mPlaca, mName, mNet, mPortaMalas, mPrice, mLock, mModel)

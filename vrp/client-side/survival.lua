@@ -18,7 +18,7 @@ end
 
 function tvRP.setHealthspawn(health)
 	local ped = PlayerPedId()
-	SetPedMaxHealth(ped,250)
+	SetPedMaxHealth(ped,400)
 	SetEntityHealth(ped,parseInt(health))
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
