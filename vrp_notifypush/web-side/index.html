@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>#fusion_notification</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+        integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+    <script src="all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    <!-- <script src="https://unpkg.com/browse/tailwindcss-standalone@1.0.1/dist/index.js"></script> -->
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="notifications2">
+        </div>
+        <div class="notifications3">
+
+        </div>
+    </div>
+    <div id="mainWindow" class="flex justify-center absolute w-full">
+
+        <div class="flex flex-col text-centerjustify-center h-full w-8/12 mr-80 bg-gray-900/50 min-h-[25vw]">
+            <div class="flex justify-center">
+                <header x-data="tabs()" x-spread="container" class="bg-white shadow relative">
+                    <nav x-ref="tabs" class="flex">
+                        <a x-spread="tab"
+                            class="inline-flex items-center justify-center px-8 py-4 text-sm font-medium text-[#ffffff] transition bg-gray-800 hover:bg-gray-700"
+                            @click="paginate(1)" href="#">ENVIAR</a>
+                        <a x-spread="tab"
+                            class="inline-flex items-center justify-center px-8 py-4 text-sm font-medium text-[#ffffff] transition bg-gray-800 hover:bg-gray-700"
+                            @click="paginate(2)" href="#">REMOVER</a>
+                        <a x-spread="tab"
+                            class="inline-flex items-center justify-center px-8 py-4 text-sm font-medium text-[#ffffff] transition bg-gray-800 hover:bg-gray-700"
+                            @click="paginate(3)" href="#">CUSTOMIZAR</a>
+                        <a x-spread="tab"
+                            class="inline-flex items-center justify-center px-8 py-4 text-sm font-medium text-[#ffffff] transition bg-gray-800 hover:bg-gray-700"
+                            @click="paginate(4)" href="#">CONFIGURAÇÂO</a>
+                    </nav>
+                    <div x-spread="indicator"
+                        class="border-t-2 border-slate-50 absolute left-0 bottom-0 transition-all duration-500"></div>
+                </header>
+            </div>
+            <!-- PAGE 1 -->
+            <div class="pages" id="page1">
+                <div class="flex flex-row">
+                    <div class="flex justify-center items-center w-full h-[5vw] mt-5">
+                        <div class="relative" x-data="{ isOpen: false }">
+                            <button @click="isOpen = !isOpen" class="flex items-center"
+                                @keydown.escape="isOpen = false">
+                                <span
+                                    class="text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-0 bg-[#01b0c7] hover:bg-[#01b0c7] focus:outline-none focus:ring-[#01b0c7]">SELECIONE
+                                    A NOTIFICAÇÂO</span>
+                            </button>
+                            <ul x-show="isOpen" x-transition:enter="transition ease-out duration-100"
+                                x-transition:enter-start="transform opacity-0 scale-95"
+                                x-transition:enter-end="transform opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-75"
+                                x-transition:leave-start="transform opacity-100 scale-100"
+                                x-transition:leave-end="transform opacity-0 scale-95" @click.away="isOpen = false"
+                                class="absolute font-normal bg-slate-800 shadow overflow-hidden rounded w-64 border mt-2 z-20 text-left text-base text-[#ffffff] antialiased">
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200"
+                                        @click="loadNotify(0)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">ANUNCIO EXÈRCITO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200"
+                                        @click="loadNotify(1)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">ANUNCIO POLICIA</span></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200"
+                                        @click="loadNotify(2)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">ANUNCIO HOSPITAL</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200"
+                                        @click="loadNotify(3)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">ANUNCIO MECANICA</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200"
+                                        @click="loadNotify(4)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">ANUNCIO OAB</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200"
+                                        @click="loadNotify(5)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">ANUNCIO STAFF</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200 "
+                                        @click="loadNotify(6)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">FESTINHA</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200 "
+                                        @click="loadNotify(7)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">ANUNCIO NEWS</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200 "
+                                        @click="loadNotify(8)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">ANUNCIO BOMBEIRO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center px-2 py-2 hover:bg-gray-200 "
+                                        @click="loadNotify(9)">
+                                        <span class="ml-2 w-full" @click="isOpen = false">ANUNCIO CRECHE</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex bg-gray-800" x-data="{radioPermChecked: 'false', radioPerm: 'false'}">
+                            <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                                <input checked id="bordered-radio-1" type="radio" value="" name="bordered-radio"
+                                    x-on:change="radioPermChecked ? radioPermChecked = false : radioPermChecked = true"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <label for="bordered-radio-1"
+                                    class="w-full py-4 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Enviar
+                                    para
+                                    Todos</label>
+                            </div>
+                            <div
+                                class="flex ml-1 items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+                                <input id="bordered-radio-1" type="radio" value="" name="bordered-radio"
+                                    x-on:change="radioPermChecked ? radioPermChecked = false : radioPermChecked = true"
+                                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <label for="bordered-radio-1"
+                                    class="py-4 ml-2 text-xs font-medium text-gray-900 dark:text-gray-300">Apenas
+                                    Permissão</label>
+                                <textarea x-bind:disabled="radioPermChecked" id="message" rows="2"
+                                    class="block p-2.0 ml-5 mr-5 text-center w-48 h-8 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Ex: paramedico.permissao"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center flex-row mt-2 w-full">
+                    <form>
+                        <div
+                            class="w-[25vw] mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+                            <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
+                                <textarea id="emojiinput" rows="4"
+                                    class="w-full h-36 px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                                    placeholder="Mensagem do anúncio..." required></textarea>
+                            </div>
+                            <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+                                <button type="button" onclick="sendNotify()" id="btnEnviar"
+                                    class="inline-flex items-center py-2.5 px-4 text-xs text-white font-medium text-center bg-[#01b0c7] hover:bg-[#01b0c7] rounded-lg">
+                                    Enviar Notificação
+                                </button>
+                                <div class="flex pl-0 space-x-1 sm:pl-2" x-data="{ isOpen: false }">
+                                    <button id="showemoji" type="button" @click="isOpen = !isOpen"
+                                        @keydown.escape="isOpen = false"
+                                        class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                                        <span class="">😍</span>
+                                    </button>
+                                    <div class="absolute top-0 right-0 bg-indigo-500 shadow-lg rounded-lg p-4 text-white"
+                                        x-show="isOpen" x-transition:enter="transition ease-out duration-1000"
+                                        x-transition:enter-start="transform opacity-0 scale-95"
+                                        x-transition:enter-end="transform opacity-100 scale-100"
+                                        x-transition:leave="transition ease-in duration-1000"
+                                        x-transition:leave-start="transform opacity-100 scale-100"
+                                        x-transition:leave-end="transform opacity-0 scale-95"
+                                        @click.away="isOpen = false">
+                                        <emoji-picker locale="pt_BR" i18n="pt_BR" id="emojis" class=""></emoji-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="flex justify-center items-center flex-row ml-20" id="previewnotify">
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE 1 -->
+            <!-- START PAGE 2 -->
+            <div class="pages invisible" id="page2">
+                <div class="bg-gray-800 flex items-center justify-center flex-col h-96">
+                    <p class="text-sm text-center text-green-700 antialised font-medium">MODO DE REMOÇÂO ATIVO</p>
+                    <p class="text-lg text-center text-[#ffffff] antialised">Clique em uma NOTIFICAÇÂO á DIREITA para
+                        REMOVE-LA instantaneamente de todos os jogadores</p>
+                    <div class="arrow text-[5vw] mr-32">➡️</div>
+                </div>
+            </div>
+            <!-- END PAGE 2 -->
+            <!-- START PAGE 3 -->
+            <div class="pages invisible" id="page3">
+                <div class="flex justify-center items-center flex-row mt-2">
+                    <div id="notifysConfig" class="flex items-center justify-center flex-row flex-wrap">
+                    </div>
+                    <div class="flex justify-center items-center flex-row" id="previewnotifyC">
+                    </div>
+                    <div class="flex justify-center items-center flex-col invisible ml-24 z-10 " id="previewnotifyE">
+                        <div class="mb-4">
+                            <label class="block text-[#ffffff] font-bold mb-2" for="titulo">
+                                Título
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
+                                id="titulo" type="text">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-[#ffffff] font-bold mb-2" for="cor-titulo">
+                                Cor Título/Ícone
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
+                                id="cor-titulo" type="text">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-[#ffffff] font-bold mb-2" for="icone">
+                                Ícone
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
+                                id="icone" type="text">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-[#ffffff] font-bold mb-2" for="cor-brilho">
+                                Cor do Brilho
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
+                                id="cor-brilho" type="text">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-[#ffffff] font-bold mb-2" for="tempo-brilho">
+                                Tempo em Milisegundos
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
+                                id="tempo-brilho" type="text">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-[#ffffff] font-bold mb-2" for="cor-degrade">
+                                Cor Degrade
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-gray-900 leading-tight focus:outline-none focus:shadow-outline"
+                                id="cor-degrade" type="text">
+                        </div>
+                        <button type="submit"
+                            class="inline-flex items-center py-2.5 px-4 text-xs text-white font-medium text-center bg-[#ffffff] hover:bg-[#ffffff] rounded-lg">
+                            Salvar Notificação
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END PAGE 3 -->
+            <!-- START PAGE 4 -->
+            <div class="pages invisible bg-red-500" id="page4">
+                <div class="bg-gray-800 flex items-center justify-center flex-col h-96">
+                    <p class="text-sm text-center text-green-700 antialised font-medium">Nada Aqui</p>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE 4 -->
+            <p class="text-center text-xs text-gray-300">Utilize esta ferramenta com bom senso, reveja as
+                regras em relação ao envio de anuncios para evitar problemas. <a href="#"
+                    class="text-blue-500 hover:underline">Fusion Group</a></p>
+        </div>
+    </div>
+    <div class="notifications">
+        <div class="notification">
+        </div>
+    </div>
+</body>
+<script>
+    $("#mainWindow").hide(0)
+</script>
+<script src="script.js"></script>
+
+</html>

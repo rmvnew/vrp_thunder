@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script>
+        var audioPlayer = null;
+
+        window.addEventListener('message', function(event) {
+            if (event.data.transactionType === "playSound") {
+                // Pausa o áudio anterior, se houver
+                if (audioPlayer != null) {
+                    audioPlayer.pause();
+                }
+
+                // Cria um novo player de áudio para a URL recebida
+                audioPlayer = new Audio(event.data.transactionFile);
+
+                // Define o volume fixo no máximo
+                audioPlayer.volume = 1.0;
+
+                // Reproduz o som
+                audioPlayer.play().catch((error) => {
+                    console.error("Erro ao reproduzir o som:", error);
+                });
+            }
+        });
+    </script>
+</head>
+</html>
