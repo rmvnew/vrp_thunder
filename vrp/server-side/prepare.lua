@@ -67,7 +67,10 @@ vRP.prepare("vRP/count_veiculos","SELECT COUNT(veiculo) as quantidade FROM vrp_u
 vRP.prepare("vRP/get_tunagem","SELECT tunagem FROM vrp_user_veiculos WHERE user_id = @user_id AND veiculo = @veiculo")
 -- vRP.prepare("vRP/get_veiculos_status","SELECT * FROM vrp_user_veiculos WHERE user_id = @user_id AND veiculo = @veiculo")
 vRP.prepare("vRP/get_veiculos_status", "SELECT * FROM vrp_user_veiculos WHERE user_id = @user_id AND placa = @placa")
+
 vRP.prepare("vRP/set_status","UPDATE vrp_user_veiculos SET status = @status WHERE user_id = @user_id AND veiculo = @veiculo")
+
+
 vRP.prepare("vRP/set_ipva","UPDATE vrp_user_veiculos SET ipva = @ipva WHERE user_id = @user_id AND veiculo = @veiculo")
 vRP.prepare("vRP/update_owner_vehicle","UPDATE vrp_user_veiculos SET user_id = @nuser_id WHERE user_id = @user_id AND veiculo = @veiculo")
 

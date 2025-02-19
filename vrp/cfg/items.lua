@@ -85,7 +85,7 @@ cfg.items = {
 	["algemas"] = { "Algemas", "usar", 2.0, nil, nil},
 	["ticket"] = { "Ticket Corrida", "usar", 1.0, nil, nil},
 	["laudo"] = { "Laudo CAC", "usar", 1.0, nil, nil},
-	["plastico"] = { "Plástico", "usar", 0.1, nil, nil},
+	["plastico"] = { "Plástico", "usar", 0.03, nil, nil},
 	["distintivopolicial"] = { "Distintivo Policial", "usar", 0.3, nil, nil},
 	["corda"] = { "Corda", "usar", 1.0, nil, nil},
 	["chave_algemas"] = { "Chave de algemas", "usar", 0.3, nil, nil},
@@ -105,6 +105,8 @@ cfg.items = {
 	-- Itens para Roubar
 	["keycard"] = { "Keycard", "none", 1.0, nil, nil},
 	["c4"] = { "C4", "none", 5.0, nil, nil},
+	["linha"] = { "Linha", "none", 5.0, nil, nil},
+	["kit_pirotecnico"] = { "Kit_pirotecnico", "none", 0.03, nil, nil},
 	["pecas_de_carro"] = { "Pecas_de_carro", "none", 0,5, nil, nil},
 	--["bolsadinheiro"] = { "Bolsa de Dinheiro", "none", 2.0, nil, nil},
 	["masterpick"] = { "MasterPick", "none", 1.0, nil, nil},
@@ -117,9 +119,9 @@ cfg.items = {
 
 	-- Itens Mafia
     ["m-aco"] = { "Aço", "none", 0.1, nil, nil},
-	["metal"] = { "Placa de Metal", "none", 0.1, nil, nil},
-	["pecadearma"] = { "Peça de arma", "none", 0.3, nil, nil},
-	["molas"] = { "Molas", "none", 0.3, nil, nil},
+	["metal"] = { "Placa de Metal", "none", 0.03, nil, nil},
+	["pecadearma"] = { "Peça de arma", "none", 0.03, nil, nil},
+	["molas"] = { "Molas", "none", 0.03, nil, nil},
     ["m-capa_colete"] = { "Capa Colete", "none", 0.8, nil, nil},
     ["m-corpo_ak47_mk2"] = { "Corpo de AK47", "none", 0.5, nil, nil},
     ["m-corpo_g3"] = { "Corpo de G3", "none", 0.5, nil, nil},
@@ -130,17 +132,17 @@ cfg.items = {
     ["m-corpo_snspistol_mk2"] = { "Corpo de Fajuta", "none", 1.0, nil, nil},
     ["m-gatilho"] = { "Gatilho", "none", 0.8, nil, nil},
 	["gatilho"] = { "Gatilho", "none", 0.1, nil, nil},
-    ["m-malha"] = { "Malha", "none", 0.1, nil, nil},
-    ["aluminio"] = { "Aluminio", "none", 0.1, nil, nil},
+    ["m-malha"] = { "Malha", "none", 0.03, nil, nil},
+    ["aluminio"] = { "Aluminio", "none", 0.03, nil, nil},
     ["m-tecido"] = { "Tecido", "none", 0.1, nil, nil},
 
 	-- Itens Cartel
-	["c-cobre"] = { "Cobre", "none", 0.1, nil, nil},
-    ["c-ferro"] = { "Ferro", "none", 0.1, nil, nil},
-    ["c-fio"] = { "Fio", "none", 0.1, nil, nil},
+	["c-cobre"] = { "Cobre", "none", 0.03, nil, nil},
+    ["c-ferro"] = { "Ferro", "none", 0.03, nil, nil},
+    ["c-fio"] = { "Fio", "none", 0.03, nil, nil},
 	["c-polvora"] = { "Polvora", "none", 0.3, nil, nil},
-	["polvora"] = { "Polvora", "none", 0.1, nil, nil},
-	["capsulas"] = { "Cápsulas", "none", 0.1, nil, nil},
+	["polvora"] = { "Polvora", "none", 0.09, nil, nil},
+	["capsulas"] = { "Cápsulas", "none", 0.09, nil, nil},
 
 	-- Itens Lavagem
 	["l-alvejante"] = { "Alvejante", "none", 0.1, nil, nil},
@@ -149,13 +151,14 @@ cfg.items = {
 	-- Pacotes de craft
 	["pacote_eletrico"] = { "Pacote Eletrico", "none", 1.0, nil, nil},
 	["pacote_componentes"] = { "Pacote de Componentes", "none", 3.0, nil, nil},
-	["pacote_tecido"] = { "Pacote de Tecido", "none", 0.2, nil, nil},
+	["pacote_tecido"] = { "Pacote de Tecido", "none", 0.03, nil, nil},
 	["pacote_metalico"] = { "Pacote Metalico", "none", 0.5, nil, nil},
 	["pacote_polvora"] = { "Pacote de Polvora", "none", 0.3, nil, nil},
 
 	--hospital
-	["elastico"] = { "elastico", "none", 0.2, nil, nil},
-	["fita_de_pano"] = { "fita_de_pano", "none", 0.2, nil, nil},
+	["elastico"] = { "elastico", "none", 0.03, nil, nil},
+	["fita_de_pano"] = { "fita_de_pano", "none", 0.03, nil, nil},
+	["anestesico"] = { "anestesico", "none", 0.03, nil, nil},
 
     -- Ilegal
 	["colete"] = { "Colete", "usar", 4.0, nil, nil},
@@ -173,14 +176,14 @@ cfg.items = {
 	-- Itens Drogas
 	["haxixe"] = { "Haxixe", "usar", 1.0, nil, nil},
 	["resinacannabis"] = { "Resina de Cannabis", "none", 0.3, nil, nil},  
-	["folhamaconha"] = { "Folha de Maconha", "none", 0.3, nil, nil},
+	["folhamaconha"] = { "Folha de Maconha", "none", 0.1, nil, nil},
     ["maconha"] = { "Maconha", "usar", 1.0, nil, nil},
-    ["pastabase"] = { "Pasta Base", "none", 0.3, nil, nil},
+    ["pastabase"] = { "Pasta Base", "none", 0.1, nil, nil},
     ["cocaina"] = { "Cocaina", "usar", 1.0, nil, nil},
-	["acidolsd"] = { "Acido LSD", "none", 0.3, nil, nil},
+	["acidolsd"] = { "Acido LSD", "none", 0.1, nil, nil},
 	["tiner"] = {"Tiner", "none", 0.3, nil, nil},
 	["lancaperfume"] = {"Lança Perfume", "none", 0.3, nil, nil},
-	["opiopapoula"] = { "Pó de Opio", "none", 0.3, nil, nil},
+	["opiopapoula"] = { "Pó de Opio", "none", 0.1, nil, nil},
 	["cristal"] = {"cristal", "none", 0.3, nil, nil},
 
     -- Drogas
@@ -214,7 +217,7 @@ cfg.items = {
 
 	-- Mineracao
 	["bronze"] = { "Bronze", "none", 1.0, nil, nil},
-	["ferro"] = { "Ferro", "none", 0.1, nil, nil},
+	["ferro"] = { "Ferro", "none", 0.03, nil, nil},
 	["ouro"] = { "Ouro", "none", 1.0, nil, nil},
 	["diamante"] = { "Diamante", "none", 1.0, nil, nil},
 	["rubi"] = { "Rubi", "none", 1.0, nil, nil},
@@ -232,7 +235,7 @@ cfg.items = {
 	["skolb"] = { "Skol Beats", "beber", 0.15, 5, -13},
 
 	-- REMEDIOS
-	["camisinha"] = { "Camisinha", "remedio", 0.05, 5, nil},
+	["camisinha"] = { "Camisinha", "remedio", 0.03, 5, nil},
 	["bandagem"] = { "Bandagem", "remedio", 0.5, 5, nil},
 	["burflex"] = { "Burflex", "remedio", 0.5, 5, nil},
 
@@ -244,10 +247,10 @@ cfg.items = {
 
 	-- PISTOLAS
 	["WEAPON_SNSPISTOL_MK2"] = { "Fajuta", "equipar", 3.0, nil, nil},
-	["AMMO_SNSPISTOL_MK2"] = { "M-Fajuta", "recarregar", 0.05, nil, nil},
+	["AMMO_SNSPISTOL_MK2"] = { "M-Fajuta", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_PISTOL_MK2"] = { "Five-Seven", "equipar", 3.0, nil, nil},
-	["AMMO_PISTOL_MK2"] = { "M-Five-Seven", "recarregar", 0.05, nil, nil},
+	["AMMO_PISTOL_MK2"] = { "M-Five-Seven", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_FLAREGUN"] = { "FLAREGUN", "equipar", 3.0, nil, nil},
 	["WEAPON_RAYPISTOL"] = { "RAYPISTOL", "equipar", 3.0, nil, nil},
@@ -256,25 +259,25 @@ cfg.items = {
 	["WEAPON_BZGAS"] = { "Gas", "equipar", 3.0, nil, nil},
 	["WEAPON_REVOLVER_MK2"] = { "Revolver", "equipar", 3.0, nil, nil},
 
-	["AMMO_FIREWORK"] = { "M-Fogos", "recarregar", 0.05, nil, nil},
-	["AMMO_FLAREGUN"] = { "M-Flaregun", "recarregar", 0.05, nil, nil},
-	["AMMO_SNOWBALL"] = { "M-Bola", "recarregar", 0.05, nil, nil},
-	["AMMO_BZGAS"] = { "M-Gas", "recarregar", 0.05, nil, nil},
-	["AMMO_REVOLVER_MK2"] = { "M-Revolver", "recarregar", 0.05, nil, nil},
+	["AMMO_FIREWORK"] = { "M-Fogos", "recarregar", 0.03, nil, nil},
+	["AMMO_FLAREGUN"] = { "M-Flaregun", "recarregar", 0.03, nil, nil},
+	["AMMO_SNOWBALL"] = { "M-Bola", "recarregar", 0.03, nil, nil},
+	["AMMO_BZGAS"] = { "M-Gas", "recarregar", 0.03, nil, nil},
+	["AMMO_REVOLVER_MK2"] = { "M-Revolver", "recarregar", 0.03, nil, nil},
 
 
 
 	["WEAPON_GUSENBERG"] = { "Submetralhadora Thompson", "equipar", 3.0, nil, nil},
-	["AMMO_GUSENBERG"] = { "M-Thompson", "recarregar", 0.05, nil, nil},
+	["AMMO_GUSENBERG"] = { "M-Thompson", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_PISTOL50"] = { "Desert Eagle", "equipar", 3.0, nil, nil},
-	["AMMO_PISTOL50"] = { "M-Desert", "recarregar", 0.05, nil, nil},
+	["AMMO_PISTOL50"] = { "M-Desert", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_COMBATPISTOL"] = { "Glock", "equipar", 3.0, nil, nil},
-	["AMMO_COMBATPISTOL"] = { "M-Glock", "recarregar", 0.05, nil, nil},
+	["AMMO_COMBATPISTOL"] = { "M-Glock", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_COMBATPDW"] = { "Combat Pdw", "equipar", 3.0, nil, nil},
-	["AMMO_COMBATPDW"] = { "M-Pdw", "recarregar", 0.05, nil, nil},
+	["AMMO_COMBATPDW"] = { "M-Pdw", "recarregar", 0.03, nil, nil},
 
 	-- MACHADOS
 	["WEAPON_HATCHET"] = { "Machados", "equipar", 3.0, nil, nil},
@@ -297,57 +300,57 @@ cfg.items = {
 	
 	-- SUBMETRALHADORA
 	["WEAPON_MACHINEPISTOL"] = { "Tec-9", "equipar", 6.0, nil, nil},
-	["AMMO_MACHINEPISTOL"] = { "M-Tec-9", "recarregar", 0.05, nil, nil},
+	["AMMO_MACHINEPISTOL"] = { "M-Tec-9", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_SMG_MK2"] = { "Smg MK2", "equipar", 6.0, nil, nil},
-	["AMMO_SMG_MK2"] = { "M-Smg MK2", "recarregar", 0.05, nil, nil},
+	["AMMO_SMG_MK2"] = { "M-Smg MK2", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_SMG"] = { "SMG", "equipar", 6.0, nil, nil},
-	["AMMO_SMG"] = { "M-SMG", "recarregar", 0.05, nil, nil},
+	["AMMO_SMG"] = { "M-SMG", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_MICROSMG"] = { "MICRO-SMG", "equipar", 6.0, nil, nil},
-	["AMMO_MICROSMG"] = { "MICRO-M-SMG", "recarregar", 0.05, nil, nil},
+	["AMMO_MICROSMG"] = { "MICRO-M-SMG", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_ASSAULTSMG"] = { "MTAR", "equipar", 6.0, nil, nil},
-	["AMMO_ASSAULTSMG"] = { "M-MTAR", "recarregar", 0.05, nil, nil},
+	["AMMO_ASSAULTSMG"] = { "M-MTAR", "recarregar", 0.03, nil, nil},
 
 	-- SHOTGUN
 	["WEAPON_SAWNOFFSHOTGUN"] = { "Shotgun", "equipar", 8.0, nil, nil},
-	["AMMO_SAWNOFFSHOTGUN"] = { "M-Shotgun", "recarregar", 0.05, nil, nil},
+	["AMMO_SAWNOFFSHOTGUN"] = { "M-Shotgun", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_PUMPSHOTGUN_MK2"] = { "Pump Shotgun", "equipar", 8.0, nil, nil},
-	["AMMO_PUMPSHOTGUN_MK2"] = { "M-Pump Shotgun", "recarregar", 0.05, nil, nil},
+	["AMMO_PUMPSHOTGUN_MK2"] = { "M-Pump Shotgun", "recarregar", 0.03, nil, nil},
 
 	-- FUZIL
 	["WEAPON_ASSAULTRIFLE"] = { "AK 47", "equipar", 8.0, nil, nil},
-	["AMMO_ASSAULTRIFLE"] = { "M-AK-47", "recarregar", 0.05, nil, nil},
+	["AMMO_ASSAULTRIFLE"] = { "M-AK-47", "recarregar", 0.03, nil, nil},
 	["WEAPON_ASSAULTRIFLE_MK2"] = { "AK MK2", "equipar", 8.0, nil, nil}, --POLICIA
-	["AMMO_ASSAULTRIFLE_MK2"] = { "M-AK MK2", "recarregar", 0.05, nil, nil},
+	["AMMO_ASSAULTRIFLE_MK2"] = { "M-AK MK2", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_HEAVYSNIPER"] = { "SNIPER", "equipar", 8.0, nil, nil},
-	["AMMO_HEAVYSNIPER"] = { "M-SNIPER", "recarregar", 0.05, nil, nil},
+	["AMMO_HEAVYSNIPER"] = { "M-SNIPER", "recarregar", 0.03, nil, nil},
 	
 
 	["WEAPON_SPECIALCARBINE_MK2"] = { "G3", "equipar", 8.0, nil, nil},
-	["AMMO_SPECIALCARBINE_MK2"] = { "M-G3", "recarregar", 0.05, nil, nil},
+	["AMMO_SPECIALCARBINE_MK2"] = { "M-G3", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_DOUBLEACTION"] = { "DOUBLEACTION", "equipar", 8.0, nil, nil},
-	["AMMO_DOUBLEACTION"] = { "M-DOUBLEACTION", "recarregar", 0.05, nil, nil},
+	["AMMO_DOUBLEACTION"] = { "M-DOUBLEACTION", "recarregar", 0.03, nil, nil},
 
 	-- ["WEAPON_CARBINERIFLE"] = { "M4", "equipar", 8.0, nil, nil},
-	-- ["AMMO_CARBINERIFLE"] = { "M-M4", "recarregar", 0.05, nil, nil},
+	-- ["AMMO_CARBINERIFLE"] = { "M-M4", "recarregar", 0.03, nil, nil},
 	["WEAPON_CARBINERIFLE_MK2"] = { "M4", "equipar", 6.0, nil, nil},
-	["AMMO_CARBINERIFLE_MK2"] = { "M-M4", "recarregar", 0.05, nil, nil},
+	["AMMO_CARBINERIFLE_MK2"] = { "M-M4", "recarregar", 0.03, nil, nil},
 
 	["WEAPON_SPECIALCARBINE"] = { "Parafal", "equipar", 8.0, nil, nil},
-	["AMMO_SPECIALCARBINE"] = { "M-Parafal", "recarregar", 0.05, nil, nil},
+	["AMMO_SPECIALCARBINE"] = { "M-Parafal", "recarregar", 0.03, nil, nil},
 	
 	-- TAZER
 	["WEAPON_STUNGUN"] = { "Tazer", "equipar", 1.0, nil, nil},
 
 	-- GALAO DE GASOLINA
 	["WEAPON_PETROLCAN"] = { "Galão de gasolina", "equipar", 1.0, nil, nil},
-	["AMMO_PETROLCAN"] = { "Gasolina", "equipar", 0.05, nil, nil},
+	["AMMO_PETROLCAN"] = { "Gasolina", "equipar", 0.03, nil, nil},
 }
 
 

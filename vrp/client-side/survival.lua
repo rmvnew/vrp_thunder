@@ -13,10 +13,12 @@ end
 --[ SETHEALTH ]--------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------------------
 function tvRP.setHealth(health)
+	print("1 - Life inicial: ",health)
 	SetEntityHealth(PlayerPedId(),parseInt(health))
 end
 
 function tvRP.setHealthspawn(health)
+	print("2 - Life inicial: ",health)
 	local ped = PlayerPedId()
 	SetPedMaxHealth(ped,400)
 	SetEntityHealth(ped,parseInt(health))

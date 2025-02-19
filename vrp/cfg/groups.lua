@@ -482,9 +482,9 @@ cfg.groups = {
 	["Aviaozinho [CRIPS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Crips", orgType = "Municao"}, "perm.crips", "perm.drogas", "perm.metanfetamina", "perm.ilegal"},
 
 	--FURIOUS--
-	["Lider [FURIOUS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Furious", orgType = "Desmanche"},"perm.gerentefurious", "perm.furious","perm.recrutamentofurious", "perm.liderfurious", "perm.gerentefurious", "perm.desmanche", "perm.ilegal", "perm.baufurious"},
-	["Sub-Lider [FURIOUS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Furious", orgType = "Desmanche"},"perm.gerentefurious", "perm.liderfurious","perm.recrutamentofurious", "perm.gerentefurious", "perm.furious", "perm.desmanche", "perm.ilegal", "perm.baufurious"},
-	["Gerente [FURIOUS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Furious", orgType = "Desmanche"},"perm.gerentefurious", "perm.gerentefurious","perm.recrutamentofurious", "perm.furious", "perm.desmanche", "perm.ilegal", "perm.baufurious"},
+	["Lider [FURIOUS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Furious", orgType = "Desmanche"}, "perm.furious","perm.recrutamentofurious", "perm.liderfurious", "perm.gerentefurious", "perm.desmanche", "perm.ilegal", "perm.baufurious"},
+	["Sub-Lider [FURIOUS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Furious", orgType = "Desmanche"}, "perm.liderfurious","perm.recrutamentofurious", "perm.gerentefurious", "perm.furious", "perm.desmanche", "perm.ilegal", "perm.baufurious"},
+	["Gerente [FURIOUS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Furious", orgType = "Desmanche"}, "perm.gerentefurious","perm.recrutamentofurious", "perm.furious", "perm.desmanche", "perm.ilegal", "perm.baufurious"},
 	["Recrutador [FURIOUS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Furious", orgType = "Desmanche"}, "perm.furious", "perm.recrutamentofurious","perm.desmanche", "perm.ilegal", "perm.baufurious"},
 	["Membro [FURIOUS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Furious", orgType = "Desmanche"}, "perm.furious","perm.recrutamentofurious", "perm.desmanche", "perm.ilegal", "perm.baufurious"},
 	["Aviaozinho [FURIOUS]"] = { _config = { gtype = "org", salario = 2000, ptr = nil, orgName = "Furious", orgType = "Desmanche"}, "perm.furious", "perm.desmanche", "perm.ilegal"},

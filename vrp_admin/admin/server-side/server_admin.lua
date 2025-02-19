@@ -447,7 +447,7 @@ function prison_lock_adm(target_id)
 				TriggerClientEvent('chatMessage', player, 'PRISAO ADM', { 0, 0, 0 }, '^0Você Ainda vai passar ^5'..parseInt(tempo)..'m^0 preso.')
 				vRP.setUData(parseInt(target_id),"vRP:prisao:ADM",json.encode(parseInt(tempo)-1))
 				prison_lock_adm(parseInt(target_id))
-				vRPclient._setHealth(player,300)
+				vRPclient._setHealth(player,400)
 				vRP.setHunger(parseInt(target_id), 0)
 				vRP.setThirst(parseInt(target_id), 0)
 			elseif parseInt(tempo) == 0  or parseInt(tempo) == -1 then

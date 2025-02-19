@@ -156,11 +156,11 @@ function task_update()
       local farm_status = exports.mark_fk:farmStatus() -- Agora verificamos corretamente o status do farm
       
       if farm_status then
-          print("Farm ativo para o jogador:", k)
+          -- print("Farm ativo para o jogador:", k)
           vRP.varyHunger(v, cfg.hunger_per_minute_fk)
           vRP.varyThirst(v, cfg.thirst_per_minute_fk)
       else
-          print("Farm inativo para o jogador:", k)
+          -- print("Farm inativo para o jogador:", k)
           vRP.varyHunger(v, cfg.hunger_per_minute)
           vRP.varyThirst(v, cfg.thirst_per_minute)
       end
